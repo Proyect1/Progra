@@ -209,7 +209,7 @@ public class FRMacceso extends javax.swing.JFrame {
              String pass = new String(arrayC); 
              if (pass.equals(key)  ){
                  jOptionPane1.showMessageDialog(null, "Bienvenid@: "+this.jCnombres.getSelectedItem() );
-                 test t = new test();
+                Principal t=new Principal();
                  t.show();
              }
              else{
