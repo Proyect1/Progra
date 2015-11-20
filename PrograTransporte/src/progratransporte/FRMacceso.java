@@ -1,8 +1,10 @@
 package progratransporte;
 
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  *
@@ -47,6 +49,11 @@ public class FRMacceso extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -55,6 +62,15 @@ public class FRMacceso extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel3.setText("Contraseña:");
+
+        txtContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtContraseñaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtContraseñaKeyReleased(evt);
+            }
+        });
 
         jCnombres.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -186,8 +202,9 @@ public class FRMacceso extends javax.swing.JFrame {
     }//GEN-LAST:event_jCnombresMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
+        
     Procesos p = new Procesos();
+     txtContraseña.requestFocus();
          try {
              PreparedStatement pstm = con.getConection().prepareStatement("select login from personal");
          ResultSet rs = pstm.executeQuery();
@@ -210,6 +227,7 @@ public class FRMacceso extends javax.swing.JFrame {
              if (pass.equals(key)  ){
                  jOptionPane1.showMessageDialog(null, "Bienvenid@: "+this.jCnombres.getSelectedItem() );
                 Principal t=new Principal();
+                t.setExtendedState(JFrame.MAXIMIZED_BOTH);
                  t.show();
              }
              else{
@@ -220,6 +238,22 @@ public class FRMacceso extends javax.swing.JFrame {
              Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_jBinicioActionPerformed
+
+    private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
+       int code = evt.getKeyCode(); 
+       char caracter = evt.getKeyChar();
+       if(code == KeyEvent.VK_ENTER){
+           jBinicioActionPerformed(null);
+       }
+    }//GEN-LAST:event_txtContraseñaKeyPressed
+
+    private void txtContraseñaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyReleased
+       
+    }//GEN-LAST:event_txtContraseñaKeyReleased
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+       
+    }//GEN-LAST:event_formKeyReleased
 
     /**
      * @param args the command line arguments
@@ -251,7 +285,10 @@ public class FRMacceso extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FRMacceso().setVisible(true);
+                FRMacceso f = new FRMacceso();
+                  f.setLocationRelativeTo(null);
+               f.setVisible(true);
+                
             }
         });
     }

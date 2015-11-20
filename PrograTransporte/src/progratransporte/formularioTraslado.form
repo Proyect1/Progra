@@ -4,6 +4,9 @@
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="internalFrameOpened" listener="javax.swing.event.InternalFrameListener" parameters="javax.swing.event.InternalFrameEvent" handler="formInternalFrameOpened"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -22,7 +25,6 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -30,15 +32,13 @@
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jllegada" min="-2" max="-2" attributes="0"/>
-                          <Component id="jsalida" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jdia" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="agregar" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jsalida" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jdia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jllegada" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="agregar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -47,12 +47,16 @@
                       </Group>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtpatente" min="-2" pref="168" max="-2" attributes="0"/>
-                          <Component id="txtrut" min="-2" pref="176" max="-2" attributes="0"/>
+                          <Component id="jCpasajero" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="jCbus" min="-2" pref="239" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <EmptySpace pref="273" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,12 +68,12 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtpatente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCbus" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtrut" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCpasajero" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -94,7 +98,7 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="196" max="-2" attributes="0"/>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,13 +132,12 @@
     <Component class="javax.swing.JComboBox" name="jdia">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
-            <StringItem index="0" value="lunes "/>
+          <StringArray count="5">
+            <StringItem index="0" value="lunes"/>
             <StringItem index="1" value="martes"/>
             <StringItem index="2" value="miercoles"/>
             <StringItem index="3" value="jueves"/>
             <StringItem index="4" value="viernes"/>
-            <StringItem index="5" value=" "/>
           </StringArray>
         </Property>
       </Properties>
@@ -162,10 +165,6 @@
           </StringArray>
         </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtpatente">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtrut">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -195,6 +194,20 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCpasajero">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCbus">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
