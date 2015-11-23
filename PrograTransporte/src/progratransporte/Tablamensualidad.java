@@ -21,6 +21,9 @@ import javax.swing.table.TableColumn;
 public class Tablamensualidad extends javax.swing.JInternalFrame {
     DefaultTableModel modelo=new DefaultTableModel();
 conectar con;
+boolean pagado;
+String mes;
+String rut;
     /**
      * Creates new form Tablamensualidad
      */
@@ -126,6 +129,11 @@ conectar con;
         jLabel6.setText("Mes");
 
         Registrar.setText("Registrar");
+        Registrar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RegistrarItemStateChanged(evt);
+            }
+        });
         Registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegistrarActionPerformed(evt);
@@ -148,6 +156,11 @@ conectar con;
         });
 
         añadir.setText("añadir a tabla");
+        añadir.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                añadirItemStateChanged(evt);
+            }
+        });
         añadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirActionPerformed(evt);
@@ -263,8 +276,10 @@ conectar con;
         String hs = (String)jmes.getSelectedItem();  
         String hll = txtmonto.getText();  
            
-        ta.registrar(bu, pa, dia, hs, hll);        
+        ta.registrar(bu, pa, dia, hs, hll);    
+        pagado=true;
         updateTable();
+        
        
     }//GEN-LAST:event_RegistrarActionPerformed
 
@@ -314,16 +329,50 @@ conectar con;
     }//GEN-LAST:event_nuevoActionPerformed
 
     private void añadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirActionPerformed
-        // TODO add your handling code here:
          
-        String []datos=new String[1];
-        datos[0]=(String)jlogin.getSelectedItem();
+         String []datos=new String[1];
+            datos[0]=(String)jlogin.getSelectedItem();
 //        datos[1]=(String)jlogin.getSelectedItem();
-//        datos[2] = txtaño.getText(); 
+//        datos[2] = txtaño.getText();
 //        datos[3]= (String)jmes.getSelectedItem();   
 //        datos[4]=txtmonto.getText();
-        modelo.addRow(datos); 
+            modelo.addRow(datos);
+        
+         
     }//GEN-LAST:event_añadirActionPerformed
+
+    private void RegistrarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RegistrarItemStateChanged
+        
+             
+        
+    }//GEN-LAST:event_RegistrarItemStateChanged
+
+    private void añadirItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_añadirItemStateChanged
+        // TODO add your handling code here:
+        
+            String i=txtrut.getText();
+        
+         switch(1){
+                case 0: rut="18654777-8"; mes="marzo";if(rut.equals(mes)){
+                    pagado=true;
+                }  else
+                   pagado=false;
+                break;
+                 
+                case 1: rut="18654223-5"; mes="marzo";if(rut.equals(mes)){
+                    pagado=true;
+                }  else
+                   pagado=false;break;    
+                  case 2: rut="18654777-8"; mes="abril";if(rut.equals(mes)){
+                    pagado=true;
+                }  else
+                   pagado=false;break;   
+                  case 3: rut="18654777-8"; mes="mayo";if(rut.equals(mes)){
+                    pagado=true;
+                }  else
+                   pagado=false;break;   
+            }
+    }//GEN-LAST:event_añadirItemStateChanged
 mensualidad ta=new mensualidad();
  Object[][] per; 
     int fila = -1;

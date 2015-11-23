@@ -21,6 +21,13 @@ public class mensualidad {
         con=new conectar();
     }
     
+    
+//    public void reportar(){
+//        int pagado;
+//        if(pagado==true){
+//          
+//        }
+    
      public void registrar(String rut, String login,String año , String mes, String monto ){
        try {            
             PreparedStatement pstm = con.getConection().prepareStatement("insert into " + 
