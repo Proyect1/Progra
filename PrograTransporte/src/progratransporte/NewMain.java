@@ -27,11 +27,11 @@ public class NewMain {
    
         con=new conectar();
       try {
-             PreparedStatement pstm = con.getConection().prepareStatement("select clave,login from ROOT.PERSONAL where login like '%1%'");
+             PreparedStatement pstm = con.getConection().prepareStatement("select PATENTE from ROOT.BUS");
          ResultSet rs = pstm.executeQuery();
          while(rs.next()){
             
-             System.out.println(rs.getString("clave")); 
+             System.out.println(rs.getString("PATENTE")); 
          }
          } catch (SQLException ex) {
              Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);

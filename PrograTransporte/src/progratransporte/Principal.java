@@ -27,112 +27,35 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        chofer = new javax.swing.JMenuItem();
-        colegio = new javax.swing.JMenuItem();
-        personal = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        traslado = new javax.swing.JMenuItem();
-        mensualidad = new javax.swing.JMenuItem();
-
-        jMenu4.setText("jMenu4");
-
-        jMenuItem1.setText("jMenuItem1");
-
-        jMenu5.setText("File");
-        jMenuBar2.add(jMenu5);
-
-        jMenu6.setText("Edit");
-        jMenuBar2.add(jMenu6);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
-        escritorio.setLayout(escritorioLayout);
-        escritorioLayout.setHorizontalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
-        );
-        escritorioLayout.setVerticalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-        );
+        jMenu1.setText("File");
 
-        jMenu1.setText("mantenedor");
+        jMenuItem1.setText("chofer");
+        jMenu1.add(jMenuItem1);
 
-        chofer.setText("chofer");
-        chofer.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("colegio");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                choferActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(chofer);
+        jMenu1.add(jMenuItem2);
 
-        colegio.setText("colegio");
-        colegio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                colegioActionPerformed(evt);
-            }
-        });
-        jMenu1.add(colegio);
-
-        personal.setText("personal");
-        personal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                personalActionPerformed(evt);
-            }
-        });
-        jMenu1.add(personal);
+        jMenuItem3.setText("personal");
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("otros");
-
-        jMenuItem4.setText("bus");
-        jMenu3.add(jMenuItem4);
-
-        jMenuItem5.setText("pasajeros");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu7.setText("tablas");
-
-        traslado.setText("formularioTraslado");
-        traslado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trasladoActionPerformed(evt);
-            }
-        });
-        jMenu7.add(traslado);
-
-        mensualidad.setText("tablamensualidad");
-        mensualidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mensualidadActionPerformed(evt);
-            }
-        });
-        jMenu7.add(mensualidad);
-
-        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -140,56 +63,19 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void colegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colegioActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        colegio co=new colegio();
-        co.setVisible(true);
-        escritorio.add(co);
-       
-    }//GEN-LAST:event_colegioActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void choferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choferActionPerformed
-        // TODO add your handling code here:
-        chofer ch=new chofer();
-        ch.setVisible(true);
-       escritorio.add(ch);
-    }//GEN-LAST:event_choferActionPerformed
-
-    private void personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalActionPerformed
-        // TODO add your handling code here:
-        personal pe=new personal();
-        pe.setVisible(true);
-       escritorio.add(pe);
-        
-    }//GEN-LAST:event_personalActionPerformed
-
-    private void trasladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trasladoActionPerformed
-        // TODO add your handling code 
-        formularioTraslado fo=new formularioTraslado();
-        fo.setVisible(true);
-        escritorio.add(fo);
-    }//GEN-LAST:event_trasladoActionPerformed
-
-    private void mensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mensualidadActionPerformed
-        // TODO add your handling code here:
-        Tablamensualidad ta=new Tablamensualidad();
-        ta.setVisible(true);
-        escritorio.add(ta);
-    }//GEN-LAST:event_mensualidadActionPerformed
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,24 +113,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem chofer;
-    private javax.swing.JMenuItem colegio;
-    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JMenuItem mensualidad;
-    private javax.swing.JMenuItem personal;
-    private javax.swing.JMenuItem traslado;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
