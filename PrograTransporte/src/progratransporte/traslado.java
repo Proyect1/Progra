@@ -54,7 +54,7 @@ public class traslado {
          PreparedStatement pstm = con.getConection().prepareStatement("SELECT " +
             " codigo,rut,patente, dia, hora_salida, hora_llegada " +
             " FROM traslado" +
-            " ORDER BY dia ");
+            " ORDER BY codigo ");
          ResultSet res = pstm.executeQuery();
          int i = 0;
          while(res.next()){
