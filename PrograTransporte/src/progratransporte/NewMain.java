@@ -23,7 +23,7 @@ public class NewMain {
     public static void main(String[] args) {
         
         conectar con;
-
+/////puta la wea
    
         con=new conectar();
       try {
