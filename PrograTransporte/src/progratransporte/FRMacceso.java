@@ -61,6 +61,11 @@ public class FRMacceso extends javax.swing.JFrame {
                 jCnombresMouseClicked(evt);
             }
         });
+        jCnombres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCnombresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -220,6 +225,10 @@ public class FRMacceso extends javax.swing.JFrame {
              Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_jBinicioActionPerformed
+
+    private void jCnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCnombresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCnombresActionPerformed
 
     /**
      * @param args the command line arguments
