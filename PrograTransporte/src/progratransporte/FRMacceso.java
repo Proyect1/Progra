@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
+
 /**
  *
  * @author miguel
@@ -75,6 +76,11 @@ public class FRMacceso extends javax.swing.JFrame {
         jCnombres.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jCnombresMouseClicked(evt);
+            }
+        });
+        jCnombres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCnombresActionPerformed(evt);
             }
         });
 
@@ -239,6 +245,11 @@ public class FRMacceso extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_jBinicioActionPerformed
 
+
+    private void jCnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCnombresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCnombresActionPerformed
+
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
        int code = evt.getKeyCode(); 
        char caracter = evt.getKeyChar();
@@ -254,6 +265,7 @@ public class FRMacceso extends javax.swing.JFrame {
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
        
     }//GEN-LAST:event_formKeyReleased
+
 
     /**
      * @param args the command line arguments
