@@ -19,14 +19,14 @@ public class classColegio {
     public classColegio() {
         con=new conectar();
     }
-    public void registrar(String codigo, String nombre, String direccion){
+    public void registrar(String nombre, String direccion){
        try {            
             PreparedStatement pstm = con.getConection().prepareStatement("insert into " + 
-                    "colegio(codigo,nombre, direccion ) " +
-                    " values(?,?,?)");            
-            pstm.setString(1, codigo);
-            pstm.setString(2, nombre);                        
-            pstm.setString(3, direccion);          
+                    "colegio(nombre, direccion ) " +
+                    " values(?,?)");            
+            
+            pstm.setString(1, nombre);                        
+            pstm.setString(2, direccion);          
                                  
             pstm.execute();
             pstm.close();            
