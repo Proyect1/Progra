@@ -21,7 +21,7 @@ import javax.swing.table.TableColumn;
 public class Tablamensualidad extends javax.swing.JInternalFrame {
     DefaultTableModel modelo=new DefaultTableModel();
 conectar con;
-boolean pagado;
+String  mensualidad;
 String mes;
 String rut;
     /**
@@ -277,7 +277,7 @@ String rut;
         String hll = txtmonto.getText();  
            
         ta.registrar(bu, pa, dia, hs, hll);    
-        pagado=true;
+        
         updateTable();
         
        
@@ -353,24 +353,11 @@ String rut;
             String i=txtrut.getText();
         
          switch(1){
-                case 0: rut="18654777-8"; mes="marzo";if(rut.equals(mes)){
-                    pagado=true;
-                }  else
-                   pagado=false;
-                break;
-                 
-                case 1: rut="18654223-5"; mes="marzo";if(rut.equals(mes)){
-                    pagado=true;
-                }  else
-                   pagado=false;break;    
-                  case 2: rut="18654777-8"; mes="abril";if(rut.equals(mes)){
-                    pagado=true;
-                }  else
-                   pagado=false;break;   
-                  case 3: rut="18654777-8"; mes="mayo";if(rut.equals(mes)){
-                    pagado=true;
-                }  else
-                   pagado=false;break;   
+                case 0: rut="18654777-8"; mes="marzo";mensualidad="pagada"; break;
+                case 1: rut="18654223-5"; mes="marzo";mensualidad="pagada";break;    
+                case 2: rut="18654777-8"; mes="abril";mensualidad="pagada";break;   
+                case 3: rut="18654777-8"; mes="mayo";mensualidad="pagada";break;  
+                case 4: rut=""; mes="";mensualidad=" no pagada";break; 
             }
     }//GEN-LAST:event_añadirItemStateChanged
 mensualidad ta=new mensualidad();
