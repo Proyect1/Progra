@@ -5,6 +5,9 @@
  */
 package progratransporte;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+
 /**
  *
  * @author claudio
@@ -29,6 +32,11 @@ public class colegio extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        actualixar = new javax.swing.JButton();
+        txtnombre = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -45,6 +53,7 @@ public class colegio extends javax.swing.JInternalFrame {
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
             }
         });
 
@@ -61,21 +70,56 @@ public class colegio extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
+        jLabel1.setText("nombre");
+
+        jLabel3.setText("direccion");
+
+        actualixar.setText("actualizar");
+        actualixar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualixarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(20, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel1)
+                        .addGap(29, 29, 29)
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addGap(34, 34, 34)
+                        .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(actualixar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(actualixar)
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,9 +131,47 @@ public class colegio extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_formInternalFrameActivated
 
+    private void actualixarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualixarActionPerformed
+        // TODO add your handling code here:
+        if (fila > -1){ 
+        String cod = String.valueOf(tabla.getValueAt(fila, 0));
+       String name = txtnombre.getText();
+        String dir = txtdireccion.getText();
+        col.update(cod, name, dir);
+        updateTable();
+        }
+    }//GEN-LAST:event_actualixarActionPerformed
 
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+        updateTable();
+    }//GEN-LAST:event_formInternalFrameOpened
+ public void updateTable(){
+     
+ 
+    String[] columNames = {"codigo","Nombre","direccion"};  
+        // se utiliza la funcion
+        dtPer = col.getDatos();
+               
+        // se colocan los datos en la tabla
+        DefaultTableModel dato = new DefaultTableModel(dtPer,columNames);                        
+        tabla.setModel(dato); 
+        //ajustamos tamaño de la celda ID
+        TableColumn columna = tabla.getColumn("codigo");        
+        columna.setPreferredWidth(50);
+        columna.setMinWidth(10);
+        columna.setMaxWidth(30);
+ }
+    int fila=-1;
+classColegio col=new classColegio();
+Object[][] dtPer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualixar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
+    private javax.swing.JTextField txtdireccion;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

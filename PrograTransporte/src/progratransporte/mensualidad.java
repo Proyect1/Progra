@@ -45,6 +45,16 @@ public class mensualidad {
          System.out.println(e);
       }
    }
+      public void deletePersona(String cod){  
+            try {                
+                PreparedStatement pstm = con.getConection().prepareStatement("delete from mensualidad where codigo = ?");            
+                pstm.setString(1, cod);                   
+                pstm.execute();
+                pstm.close();            
+            }catch(SQLException e){
+            System.out.println(e);
+            }            
+   }
       public Object [][] getDatos(){
       int registros = 0;
       //obtenemos la cantidad de registros existentes en la tabla

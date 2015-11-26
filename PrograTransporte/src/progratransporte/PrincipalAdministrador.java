@@ -35,7 +35,15 @@ public class PrincipalAdministrador extends javax.swing.JFrame {
         colegio = new javax.swing.JMenuItem();
         personal = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        actuachofer = new javax.swing.JMenuItem();
+        actuacolegio = new javax.swing.JMenuItem();
+        actuapersonal = new javax.swing.JMenuItem();
+        actuabus = new javax.swing.JMenuItem();
+        actuapasajero = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        elichofer = new javax.swing.JMenuItem();
+        elicolegio = new javax.swing.JMenuItem();
+        elipersonal = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
@@ -88,9 +96,60 @@ public class PrincipalAdministrador extends javax.swing.JFrame {
         jMenuBar1.add(chofer);
 
         jMenu2.setText("Actualizar");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+
+        actuachofer.setText("chofer");
+        actuachofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuachoferActionPerformed(evt);
+            }
+        });
+        jMenu2.add(actuachofer);
+
+        actuacolegio.setText("colegio");
+        actuacolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuacolegioActionPerformed(evt);
+            }
+        });
+        jMenu2.add(actuacolegio);
+
+        actuapersonal.setText("personal");
+        actuapersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuapersonalActionPerformed(evt);
+            }
+        });
+        jMenu2.add(actuapersonal);
+
+        actuabus.setText("bus");
+        jMenu2.add(actuabus);
+
+        actuapasajero.setText("pasajero");
+        jMenu2.add(actuapasajero);
+
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("Eliminar");
+
+        elichofer.setText("chofer");
+        jMenu4.add(elichofer);
+
+        elicolegio.setText("colegio");
+        elicolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elicolegioActionPerformed(evt);
+            }
+        });
+        jMenu4.add(elicolegio);
+
+        elipersonal.setText("personal");
+        jMenu4.add(elipersonal);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -141,6 +200,41 @@ public class PrincipalAdministrador extends javax.swing.JFrame {
        
     }//GEN-LAST:event_choferActionPerformed
 
+    private void elicolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elicolegioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_elicolegioActionPerformed
+
+    private void actuachoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuachoferActionPerformed
+        // TODO add your handling code here:
+        chofer ch=new chofer();
+        ch.setVisible(true);
+       escritorio.add(ch);
+//        ch.updateTable();
+       
+      
+        
+    }//GEN-LAST:event_actuachoferActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void actuacolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuacolegioActionPerformed
+        // TODO add your handling code here:
+        colegio co=new colegio();
+        co.setVisible(true);
+         escritorio.add(co);
+//        co.updateTable();
+    }//GEN-LAST:event_actuacolegioActionPerformed
+
+    private void actuapersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuapersonalActionPerformed
+        // TODO add your handling code here:
+        personal per=new personal();
+        per.setVisible(true);
+         escritorio.add(per);
+        
+    }//GEN-LAST:event_actuapersonalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,8 +271,16 @@ public class PrincipalAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem actuabus;
+    private javax.swing.JMenuItem actuachofer;
+    private javax.swing.JMenuItem actuacolegio;
+    private javax.swing.JMenuItem actuapasajero;
+    private javax.swing.JMenuItem actuapersonal;
     private javax.swing.JMenu chofer;
     private javax.swing.JMenuItem colegio;
+    private javax.swing.JMenuItem elichofer;
+    private javax.swing.JMenuItem elicolegio;
+    private javax.swing.JMenuItem elipersonal;
     private javax.swing.JPanel escritorio;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

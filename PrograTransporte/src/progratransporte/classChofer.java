@@ -39,16 +39,17 @@ public class classChofer {
        try {            
             PreparedStatement pstm = con.getConection().prepareStatement("update chofer " +
             "set rut = ? ," + 
-           "Nombre = ? ," +
+           "nombre = ? ," +
            "apellido = ? ," +                    
             "movil = ? " +    
              "sexo = ? " +        
             "where rut = ? ");            
-            pstm.setString(1, rut);                  
-            pstm.setString(2, name);
-            pstm.setString(3, apellido);
-            pstm.setString(4, movil);
-            pstm.setString(5, sexo);
+                           
+            pstm.setString(1, name);
+            pstm.setString(2, apellido);
+            pstm.setString(3, movil);
+            pstm.setString(4, sexo);
+            pstm.setString(5, String.valueOf(rut));   
             pstm.execute();
             pstm.close();            
          }catch(SQLException e){
@@ -78,7 +79,7 @@ public class classChofer {
          System.out.println(e);
       }
       
-    Object[][] data = new String[registros][6];  
+    Object[][] data = new String[registros][5];  
     //realizamos la consulta sqol y llenamos los datos en "Object"
       try{    
          PreparedStatement pstm = con.getConection().prepareStatement("SELECT " +
@@ -88,18 +89,18 @@ public class classChofer {
          ResultSet res = pstm.executeQuery();
          int i = 0;
          while(res.next()){
-             String estcodigo= res.getString("codigo");
+             
              String estrut = res.getString("rut");
             String estNombre = res.getString("nombre");
             String estape = res.getString("apellido");
             String estmo = res.getString("movil");
             String estsex = res.getString("sexo");
-            data[i][0] = estcodigo;
-            data[i][1] = estrut; 
-            data[i][2] = estNombre;            
-            data[i][3] = estape;            
-            data[i][4] = estmo;            
-            data[i][5] = estsex;            
+           
+            data[i][0] = estrut; 
+            data[i][1] = estNombre;            
+            data[i][2] = estape;            
+            data[i][3] = estmo;            
+            data[i][4] = estsex;            
             i++;
          }
          res.close();

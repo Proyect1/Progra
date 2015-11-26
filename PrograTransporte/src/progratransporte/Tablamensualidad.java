@@ -22,6 +22,7 @@ import javax.swing.table.TableColumn;
  */
 public class Tablamensualidad extends javax.swing.JInternalFrame {
     DefaultTableModel modelo=new DefaultTableModel();
+      DefaultTableModel mod=new DefaultTableModel();
 conectar con;
 
     /**
@@ -31,13 +32,15 @@ conectar con;
         initComponents();
         con=new conectar();
         modelo.addColumn("personal en caja");
-        
-//        modelo.addColumn("Direccion");
-//        modelo.addColumn("Comuna");
-//        modelo.addColumn("Tipificacion");
-//        modelo.addColumn("L.actual");
-//        modelo.addColumn("L.Anterior");
-        tablaregis.setModel(modelo);
+        tablapago.setModel(modelo);
+         mod.addColumn("codigo");
+                    mod.addColumn("rut");
+                    mod.addColumn("login");
+                    mod.addColumn("año");
+                    mod.addColumn("mes");
+                    mod.addColumn("monto");
+                    mod.addColumn("mensualidad");
+                  mensua.setModel(mod);
     }
 
     /**
@@ -64,15 +67,17 @@ conectar con;
         Registrar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         nuevo = new javax.swing.JButton();
-        añadir = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tablaregis = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jmensualidad = new javax.swing.JComboBox();
         txtconsulta = new javax.swing.JTextField();
         consulta = new javax.swing.JButton();
         txtlogin = new javax.swing.JTextField();
         txtmes = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablapago = new javax.swing.JTable();
+        eliminar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        mensua = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,31 +158,6 @@ conectar con;
             }
         });
 
-        añadir.setText("añadir a tabla");
-        añadir.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                añadirItemStateChanged(evt);
-            }
-        });
-        añadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirActionPerformed(evt);
-            }
-        });
-
-        tablaregis.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(tablaregis);
-
         jLabel3.setText("mensualidad");
 
         jmensualidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "cancelada", "pendiente" }));
@@ -189,34 +169,59 @@ conectar con;
             }
         });
 
+        tablapago.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+            }
+        ));
+        jScrollPane4.setViewportView(tablapago);
+
+        eliminar.setText("eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
+        mensua.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        mensua.setColumnSelectionAllowed(true);
+        jScrollPane3.setViewportView(mensua);
+        mensua.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(73, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Registrar)
-                                        .addGap(47, 47, 47)
-                                        .addComponent(añadir))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(consulta)))
-                                .addGap(27, 27, 27)
-                                .addComponent(nuevo))
+                                .addComponent(Registrar)
+                                .addGap(52, 52, 52)
+                                .addComponent(nuevo)
+                                .addGap(65, 65, 65)
+                                .addComponent(eliminar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(consulta))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
@@ -242,8 +247,14 @@ conectar con;
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addGap(41, 41, 41)
-                                        .addComponent(jmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addComponent(jmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,27 +283,24 @@ conectar con;
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Registrar)
-                    .addComponent(añadir)
-                    .addComponent(nuevo))
+                    .addComponent(nuevo)
+                    .addComponent(eliminar))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(consulta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
-       
-//        try{
-//            PreparedStatement pstm =con.getConection().prepareStatement("select codigo,rut,login from mensualidad where login like '%"+this.jlogin.getSelectedItem()+"'%'");
-//            ResultSet res=pstm.executeQuery();
-//        } catch (SQLException ex) {
-//        Logger.getLogger(Tablamensualidad.class.getName()).log(Level.SEVERE, null, ex);
-//    }
+
          String bu = txtrut.getText();
         String pa= txtlogin.getText();
         String dia = txtaño.getText();    
@@ -300,7 +308,10 @@ conectar con;
         String hll = txtmonto.getText();  
         String men=(String)jmensualidad.getSelectedItem();
         ta.registrar(bu, pa, dia, hs, hll,men);    
-        
+       
+        String []datos=new String[1];
+            datos[0]=txtlogin.getText();
+            modelo.addRow(datos);
         updateTable();
         
        
@@ -335,33 +346,7 @@ conectar con;
 //    
         
     }//GEN-LAST:event_formInternalFrameOpened
-// void mostrardatos(String valor){
-//    
-//    modelo.addColumn("rut");
-//    modelo.addColumn("mes");
-//    modelo.addColumn("mensualidad");
-//    tablaregis.setModel(modelo);
-//   String sql="";
-//    if(valor.equals(""))
-//    {
-//        sql="SELECT * FROM mensualidad";
-//    }
-// 
-//    String []datos = new String [3];
-//        try {
-//            PreparedStatement pstm=con.getConection().prepareStatement("select rut,mes,mensualidad from mensualidad");
-//            ResultSet rs = pstm.executeQuery();
-//            while(rs.next()){
-//                datos[0]=rs.getString(1);
-//                datos[1]=rs.getString(2);
-//                datos[2]=rs.getString(3);
-//                modelo.addRow(datos);
-//            }
-//            tablaregis.setModel(modelo);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Tablamensualidad.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        }
+
     
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
@@ -373,64 +358,55 @@ conectar con;
         nuevo();
     }//GEN-LAST:event_nuevoActionPerformed
 
-    private void añadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirActionPerformed
-         
-         String []datos=new String[1];
-            datos[0]=txtlogin.getText();
-//        datos[1]=(String)jlogin.getSelectedItem();
-//        datos[2] = txtaño.getText();
-//        datos[3]= (String)jmes.getSelectedItem();   
-//        datos[4]=txtmonto.getText();
-            modelo.addRow(datos);
-        
-         
-    }//GEN-LAST:event_añadirActionPerformed
-
     private void RegistrarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RegistrarItemStateChanged
-        
-             
-        
+    
     }//GEN-LAST:event_RegistrarItemStateChanged
 
-    private void añadirItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_añadirItemStateChanged
-        // TODO add your handling code here:
-        
-           
-    }//GEN-LAST:event_añadirItemStateChanged
-
     private void consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaActionPerformed
-        // TODO add your handling code here:
-      
-        try {
         
-            String codBuscar =txtconsulta.getText();
-           PreparedStatement pstm=con.getConection().prepareStatement("SELECT mensualidad  FROM mensualidad ");
-        ResultSet  res = pstm.executeQuery();
-            boolean encontro = false;
-            while (res.next()) {
-                if (codBuscar.equals(res.getObject("mensualidad"))) {
-                    encontro = true;
-                    break;
+        
+        try {
+            // TODO add your handling code here:
+            String co =txtconsulta.getText();
+            PreparedStatement pstm=con.getConection().prepareStatement("SELECT *  FROM mensualidad where mensualidad='" + co + "'");
+            ResultSet  res = pstm.executeQuery();
+            while(res.next()){
+                if(co.equals("pendiente")){
+                    String []dato = new String [7];
+                    dato[0]=res.getString(1);
+                    dato[1]=res.getString(2);
+                    dato[2]=res.getString(3);
+                    dato[3]=res.getString(4);
+                    dato[4]=res.getString(5);
+                    dato[5]=res.getString(6);
+                    dato[6]=res.getString(7);
+                    mod.addRow(dato);
                 }
             }
-            String SQL = "SELECT * FROM mensualidad where mensualidad='" + codBuscar + "'";
-//            modelo = con.retornarDatosTabla(SQL);
-//            tablaregis.setModel(modelo);
-//            jScrollPane2.getViewport().add(tablaregis);
-//            if (encontro == false) {
-//                JOptionPane.showMessageDialog(null, "no existe Estudiante Buscado");
-//            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(Tablamensualidad.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_consultaActionPerformed
-mensualidad ta=new mensualidad();
- Object[][] per; 
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+         if (fila > -1){
+            String codigo = String.valueOf(tabla.getValueAt(fila, 0));                        
+            ta.deletePersona(codigo);
+            updateTable();
+            fila=-1;
+        }
+    }//GEN-LAST:event_eliminarActionPerformed
+   mensualidad ta=new mensualidad();
+   Object[][] per; 
     int fila = -1;
+     
     public void nuevo(){
         txtrut.setText("");
         txtaño.setText("");
-       
+        txtlogin.setText("");
+         txtmes.setText("");
         txtmonto.setText("");
         
     }
@@ -451,8 +427,8 @@ mensualidad ta=new mensualidad();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Registrar;
-    private javax.swing.JButton añadir;
     private javax.swing.JButton consulta;
+    private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -463,11 +439,13 @@ mensualidad ta=new mensualidad();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox jmensualidad;
+    private javax.swing.JTable mensua;
     private javax.swing.JButton nuevo;
     private javax.swing.JTable tabla;
-    private javax.swing.JTable tablaregis;
+    private javax.swing.JTable tablapago;
     private javax.swing.JTextField txtaño;
     private javax.swing.JTextField txtconsulta;
     private javax.swing.JTextField txtlogin;
