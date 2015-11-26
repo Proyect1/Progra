@@ -19,12 +19,23 @@ import javax.swing.table.TableColumn;
  */
 public class formularioTraslado extends javax.swing.JInternalFrame {
 conectar con;
+DefaultTableModel mod=new DefaultTableModel();
+
     /**
      * Creates new form formularioTraslado
      */
     public formularioTraslado() {
         initComponents();
          con=new conectar();
+         mod.addColumn("codigo");
+         mod.addColumn("rut");
+         mod.addColumn("patente ");
+         mod.addColumn("dia ");
+         mod.addColumn("hora_salida");
+      
+         reporte.setModel(mod);
+         
+     
     }
 
     /**
@@ -49,6 +60,10 @@ conectar con;
         agregar = new javax.swing.JButton();
         jCpasajero = new javax.swing.JComboBox();
         jCbus = new javax.swing.JComboBox();
+        txtdia = new javax.swing.JTextField();
+        reportar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        reporte = new javax.swing.JTable();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -104,37 +119,66 @@ conectar con;
             }
         });
 
+        reportar.setText("reportar");
+        reportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportarActionPerformed(evt);
+            }
+        });
+
+        reporte.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(reporte);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jsalida, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jdia, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jllegada, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(64, 64, 64)
-                        .addComponent(agregar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(94, 94, 94)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jsalida, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jdia, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jllegada, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(64, 64, 64)
+                                .addComponent(agregar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(92, 92, 92)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCpasajero, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCbus, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(txtdia, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(reportar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(92, 92, 92)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCpasajero, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCbus, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(273, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,8 +209,14 @@ conectar con;
                     .addComponent(jLabel5)
                     .addComponent(jllegada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reportar))
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -185,6 +235,7 @@ conectar con;
     }//GEN-LAST:event_agregarActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        updateTable();
         try {
              PreparedStatement pstm = con.getConection().prepareStatement("select PATENTE from ROOT.BUS");
          ResultSet rs = pstm.executeQuery();
@@ -201,10 +252,35 @@ conectar con;
              Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void reportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportarActionPerformed
+    try {
+        // TODO add your handling code here:
+        String co =txtdia.getText();
+        PreparedStatement pstm=con.getConection().prepareStatement("SELECT *  FROM traslado where dia ='" + co + "'"+"order by hora_salida" );
+        ResultSet  res = pstm.executeQuery();
+        while(res.next()){
+            if(co.equals("lunes")||co.equals("martes")||co.equals("miercoles")||co.equals("jueves")||co.equals("viernes")){
+                String []dato = new String [5];
+                dato[0]=res.getString(1);
+                dato[1]=res.getString(2);
+                dato[2]=res.getString(3);
+                dato[3]=res.getString(4);
+                dato[4]=res.getString(5);
+               
+                mod.addRow(dato);
+            }
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(formularioTraslado.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_reportarActionPerformed
  traslado ta=new traslado();
  Object[][] per; 
     int fila = -1;
   
+   
+            
  public void updateTable(){
         String [] colum={"codigo","rut","patente", "dia", "hora_salida", "hora_llegada"};
         per = ta.getDatos();
@@ -217,7 +293,7 @@ conectar con;
         columna.setPreferredWidth(50);
         columna.setMinWidth(10);
         columna.setMaxWidth(30);
-        
+ 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -230,9 +306,13 @@ conectar con;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox jdia;
     private javax.swing.JComboBox jllegada;
     private javax.swing.JComboBox jsalida;
+    private javax.swing.JButton reportar;
+    private javax.swing.JTable reporte;
     private javax.swing.JTable tabla;
+    private javax.swing.JTextField txtdia;
     // End of variables declaration//GEN-END:variables
 }

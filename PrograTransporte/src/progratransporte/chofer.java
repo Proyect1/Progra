@@ -77,6 +77,11 @@ public class chofer extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabla);
 
         jLabel1.setText("rut");
@@ -188,6 +193,18 @@ public class chofer extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         updateTable();
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        // TODO add your handling code here:
+          fila = tabla.rowAtPoint(evt.getPoint());                 
+      if(fila>-1){
+       txtrut.setText(String.valueOf(tabla.getValueAt(fila, 0)));
+        txtnombre.setText(String.valueOf(tabla.getValueAt(fila, 1)));
+        txtapellido.setText(String.valueOf(tabla.getValueAt(fila, 2)));
+        txtmovil.setText(String.valueOf(tabla.getValueAt(fila, 3)));
+        txtsexo.setText(String.valueOf(tabla.getValueAt(fila, 4)));
+      }
+    }//GEN-LAST:event_tablaMouseClicked
 
 public void updateTable(){
      String[] columNames = {"rut","nombre","apellido","movil", "sexo"};  
