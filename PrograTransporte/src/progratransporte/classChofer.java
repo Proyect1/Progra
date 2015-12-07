@@ -16,6 +16,8 @@ import java.sql.SQLException;
 public class classChofer {
     conectar con;
 
+
+    
     public classChofer() {
         con=new conectar();
     }

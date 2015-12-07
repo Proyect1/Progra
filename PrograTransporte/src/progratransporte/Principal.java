@@ -27,6 +27,16 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JSeparator();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
         escritorio = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -39,6 +49,34 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         tablamensualidad = new javax.swing.JMenuItem();
         formulariotars = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        btnadministrativo = new javax.swing.JMenu();
+        actuachofer = new javax.swing.JMenuItem();
+        actuacolegio = new javax.swing.JMenuItem();
+        actuapersonal = new javax.swing.JMenuItem();
+        btnadministrativo1 = new javax.swing.JMenu();
+        agregarchofer = new javax.swing.JMenuItem();
+        agregarcolegio = new javax.swing.JMenuItem();
+        agregarpersonal = new javax.swing.JMenuItem();
+        btnadministrativo2 = new javax.swing.JMenu();
+        eliminarchofer = new javax.swing.JMenuItem();
+        eliminarcolegio = new javax.swing.JMenuItem();
+        eliminarpersonal = new javax.swing.JMenuItem();
+
+        jMenuItem9.setText("jMenuItem9");
+
+        jMenu5.setText("File");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar2.add(jMenu6);
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jMenu7.setText("jMenu7");
+
+        jMenuItem10.setText("jMenuItem10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +146,84 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setText("CRUD");
+
+        btnadministrativo.setText("Actualizar");
+
+        actuachofer.setText("chofer");
+        actuachofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuachoferActionPerformed(evt);
+            }
+        });
+        btnadministrativo.add(actuachofer);
+
+        actuacolegio.setText("colegio");
+        actuacolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuacolegioActionPerformed(evt);
+            }
+        });
+        btnadministrativo.add(actuacolegio);
+
+        actuapersonal.setText("personal");
+        actuapersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuapersonalActionPerformed(evt);
+            }
+        });
+        btnadministrativo.add(actuapersonal);
+
+        jMenu4.add(btnadministrativo);
+
+        btnadministrativo1.setText("Agregar");
+
+        agregarchofer.setText("chofer");
+        agregarchofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarchoferActionPerformed(evt);
+            }
+        });
+        btnadministrativo1.add(agregarchofer);
+
+        agregarcolegio.setText("colegio");
+        agregarcolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarcolegioActionPerformed(evt);
+            }
+        });
+        btnadministrativo1.add(agregarcolegio);
+
+        agregarpersonal.setText("personal");
+        agregarpersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarpersonalActionPerformed(evt);
+            }
+        });
+        btnadministrativo1.add(agregarpersonal);
+
+        jMenu4.add(btnadministrativo1);
+
+        btnadministrativo2.setText("Eliminar");
+
+        eliminarchofer.setText("chofer");
+        btnadministrativo2.add(eliminarchofer);
+
+        eliminarcolegio.setText("colegio");
+        eliminarcolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarcolegioActionPerformed(evt);
+            }
+        });
+        btnadministrativo2.add(eliminarcolegio);
+
+        eliminarpersonal.setText("personal");
+        btnadministrativo2.add(eliminarpersonal);
+
+        jMenu4.add(btnadministrativo2);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,6 +265,64 @@ public class Principal extends javax.swing.JFrame {
         escritorio.add(ta);
     }//GEN-LAST:event_tablamensualidadActionPerformed
 
+    private void actuachoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuachoferActionPerformed
+        // TODO add your handling code here:
+        chofer ch=new chofer();
+        escritorio.add(ch);
+        ch.setVisible(true);
+        ch.show();
+    }//GEN-LAST:event_actuachoferActionPerformed
+
+    private void agregarpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarpersonalActionPerformed
+        // TODO add your handling code here:
+        personal per= new personal(clave,nombre);
+        escritorio.add(per);
+        per.show();
+    }//GEN-LAST:event_agregarpersonalActionPerformed
+
+    private void eliminarcolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarcolegioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarcolegioActionPerformed
+
+    private void actuacolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuacolegioActionPerformed
+        // TODO add your handling code here:
+        colegio co=new colegio();
+        escritorio.add(co);
+        co.setVisible(true);
+        co.show();
+    }//GEN-LAST:event_actuacolegioActionPerformed
+
+    private void actuapersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuapersonalActionPerformed
+        // TODO add your handling code here:
+        personal per=new personal();
+        escritorio.add(per);
+        per.setVisible(true);
+        per.show();
+    }//GEN-LAST:event_actuapersonalActionPerformed
+
+    private void agregarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarchoferActionPerformed
+        // TODO add your handling code here
+        chofer cho=new chofer(rut,nombre,apellido,movil,sexo);
+        escritorio.add(cho);
+        cho.show();
+        
+    }//GEN-LAST:event_agregarchoferActionPerformed
+
+    private void agregarcolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarcolegioActionPerformed
+        // TODO add your handling code here:
+        colegio ol=new colegio(nombre,direccion);
+        escritorio.add(ol);
+        ol.show();
+        
+                
+    }//GEN-LAST:event_agregarcolegioActionPerformed
+ String rut ;
+ String nombre;
+ String apellido;
+ String movil;
+ String sexo;
+ String direccion;
+ int clave;
     /**
      * @param args the command line arguments
      */
@@ -185,17 +359,40 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem actuachofer;
+    private javax.swing.JMenuItem actuacolegio;
+    private javax.swing.JMenuItem actuapersonal;
+    private javax.swing.JMenuItem agregarchofer;
+    private javax.swing.JMenuItem agregarcolegio;
+    private javax.swing.JMenuItem agregarpersonal;
+    private javax.swing.JMenu btnadministrativo;
+    private javax.swing.JMenu btnadministrativo1;
+    private javax.swing.JMenu btnadministrativo2;
+    private javax.swing.JMenuItem eliminarchofer;
+    private javax.swing.JMenuItem eliminarcolegio;
+    private javax.swing.JMenuItem eliminarpersonal;
     private javax.swing.JPanel escritorio;
     private javax.swing.JMenuItem formulariotars;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenuItem tablamensualidad;
     // End of variables declaration//GEN-END:variables
 }
