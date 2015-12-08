@@ -72,6 +72,11 @@ public class personal extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabla);
 
         jLabel1.setText("clave");
@@ -149,6 +154,17 @@ public class personal extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         updateTable();
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        // TODO add your handling code here:
+        
+            fila = tabla.rowAtPoint(evt.getPoint());                 
+      if(fila>-1){
+       txtclave.setText(String.valueOf(tabla.getValueAt(fila, 1)));
+        txtnombre.setText(String.valueOf(tabla.getValueAt(fila, 2)));
+      
+      }
+    }//GEN-LAST:event_tablaMouseClicked
  classPersonal p= new classPersonal();     
     Object[][] dtPer; 
     int fila = -1;

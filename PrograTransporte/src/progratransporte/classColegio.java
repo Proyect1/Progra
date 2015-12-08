@@ -42,10 +42,10 @@ public class classColegio {
            "direccion = ? ," +                    
            "where codigo = ? ");            
                           
-            pstm.setString(2, nombre);
-            pstm.setString(3, direccion);
+            pstm.setString(1, nombre);
+            pstm.setString(2, direccion);
            
-            pstm.setString(6,String.valueOf(codigo) );
+            pstm.setString(3,String.valueOf(codigo) );
             pstm.execute();
             pstm.close();            
          }catch(SQLException e){

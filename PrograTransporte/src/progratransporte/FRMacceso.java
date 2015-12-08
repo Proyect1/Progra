@@ -21,7 +21,7 @@ public class FRMacceso extends javax.swing.JFrame {
         initComponents();
         con=new conectar();
     }
-            Procesos p = new Procesos();
+            classPasajeros p = new classPasajeros();
             
     /**
      * This method is called from within the constructor to initialize the form.
@@ -187,7 +187,7 @@ public class FRMacceso extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-    Procesos p = new Procesos();
+    classPasajeros p = new classPasajeros();
      txtContraseña.requestFocus();
          try {
              PreparedStatement pstm = con.getConection().prepareStatement("select login from personal");

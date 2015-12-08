@@ -37,15 +37,15 @@ public class Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jPopupMenu2 = new javax.swing.JPopupMenu();
+        jButton1 = new javax.swing.JButton();
         escritorio = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        vercolegio = new javax.swing.JMenuItem();
+        verchofer = new javax.swing.JMenuItem();
+        verpersonal = new javax.swing.JMenuItem();
+        verpasajero = new javax.swing.JMenuItem();
+        verbus = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         tablamensualidad = new javax.swing.JMenuItem();
         formulariotars = new javax.swing.JMenuItem();
@@ -78,6 +78,8 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuItem10.setText("jMenuItem10");
 
+        jButton1.setText("jButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         escritorio.setBackground(new java.awt.Color(0, 0, 0));
@@ -90,44 +92,63 @@ public class Principal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 266, Short.MAX_VALUE)
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eye-icon.png"))); // NOI18N
         jMenu1.setText("Ver");
 
-        jMenuItem1.setText("colegio");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        vercolegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reseller_account.png"))); // NOI18N
+        vercolegio.setText("colegio");
+        vercolegio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                vercolegioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(vercolegio);
 
-        jMenuItem2.setText("chofer");
-        jMenu1.add(jMenuItem2);
+        verchofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_red.png"))); // NOI18N
+        verchofer.setText("chofer");
+        verchofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verchoferActionPerformed(evt);
+            }
+        });
+        jMenu1.add(verchofer);
 
-        jMenuItem3.setText("personal");
-        jMenu1.add(jMenuItem3);
+        verpersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_green.png"))); // NOI18N
+        verpersonal.setText("personal");
+        verpersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verpersonalActionPerformed(evt);
+            }
+        });
+        jMenu1.add(verpersonal);
+
+        verpasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_silhouette.png"))); // NOI18N
+        verpasajero.setText("pasajero");
+        verpasajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verpasajeroActionPerformed(evt);
+            }
+        });
+        jMenu1.add(verpasajero);
+
+        verbus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/metro.png"))); // NOI18N
+        verbus.setText("bus");
+        verbus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verbusActionPerformed(evt);
+            }
+        });
+        jMenu1.add(verbus);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("tablas");
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table_edit.png"))); // NOI18N
+        jMenu3.setText("Tablas");
 
-        jMenuItem4.setText("bus");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("pasajero");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("mensualidad y traslado ");
-
+        tablamensualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table.png"))); // NOI18N
         tablamensualidad.setText("tablamensualidad");
         tablamensualidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +157,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(tablamensualidad);
 
+        formulariotars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font_red.png"))); // NOI18N
         formulariotars.setText("formularioTraslado");
         formulariotars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,8 +168,10 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/application-settings-icon.png"))); // NOI18N
         jMenu4.setText("CRUD");
 
+        btnadministrativo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/update.png"))); // NOI18N
         btnadministrativo.setText("Actualizar");
 
         actuachofer.setText("chofer");
@@ -176,6 +200,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu4.add(btnadministrativo);
 
+        btnadministrativo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnadministrativo1.setText("Agregar");
 
         agregarchofer.setText("chofer");
@@ -204,6 +229,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu4.add(btnadministrativo1);
 
+        btnadministrativo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
         btnadministrativo2.setText("Eliminar");
 
         eliminarchofer.setText("chofer");
@@ -242,13 +268,19 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void vercolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vercolegioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        colegio col=new colegio();
+        escritorio.add(col);
+        col.setVisible(true);
+    }//GEN-LAST:event_vercolegioActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void verpasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verpasajeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+        pasajero pas=new pasajero();
+        escritorio.add(pas);
+        pas.setVisible(true);
+    }//GEN-LAST:event_verpasajeroActionPerformed
 
     private void formulariotarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formulariotarsActionPerformed
         // TODO add your handling code here:
@@ -275,8 +307,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void agregarpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarpersonalActionPerformed
         // TODO add your handling code here:
-        personal per= new personal(clave,nombre);
+        Agregarpersonal per= new Agregarpersonal();
         escritorio.add(per);
+        per.setVisible(true);
         per.show();
     }//GEN-LAST:event_agregarpersonalActionPerformed
 
@@ -302,20 +335,44 @@ public class Principal extends javax.swing.JFrame {
 
     private void agregarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarchoferActionPerformed
         // TODO add your handling code here
-        chofer cho=new chofer(rut,nombre,apellido,movil,sexo);
+        Agregarchofer cho=new Agregarchofer();
         escritorio.add(cho);
+        cho.setVisible(true);
         cho.show();
         
     }//GEN-LAST:event_agregarchoferActionPerformed
 
     private void agregarcolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarcolegioActionPerformed
         // TODO add your handling code here:
-        colegio ol=new colegio(nombre,direccion);
+        Agregarcolegio ol=new Agregarcolegio();
         escritorio.add(ol);
+        ol.setVisible(true);
         ol.show();
         
                 
     }//GEN-LAST:event_agregarcolegioActionPerformed
+
+    private void verpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verpersonalActionPerformed
+        // TODO add your handling code here:
+        personal per=new personal();
+        escritorio.add(per);
+        per.setVisible(true);
+    }//GEN-LAST:event_verpersonalActionPerformed
+
+    private void verchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verchoferActionPerformed
+        // TODO add your handling code here:
+        chofer ch=new chofer();
+        escritorio.add(ch);
+        ch.setVisible(true);
+        
+    }//GEN-LAST:event_verchoferActionPerformed
+
+    private void verbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verbusActionPerformed
+        // TODO add your handling code here:
+        bus bu=new bus();
+        escritorio.add(bu);
+        bu.setVisible(true);
+    }//GEN-LAST:event_verbusActionPerformed
  String rut ;
  String nombre;
  String apellido;
@@ -373,8 +430,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem eliminarpersonal;
     private javax.swing.JPanel escritorio;
     private javax.swing.JMenuItem formulariotars;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
@@ -382,17 +439,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenuItem tablamensualidad;
+    private javax.swing.JMenuItem verbus;
+    private javax.swing.JMenuItem verchofer;
+    private javax.swing.JMenuItem vercolegio;
+    private javax.swing.JMenuItem verpasajero;
+    private javax.swing.JMenuItem verpersonal;
     // End of variables declaration//GEN-END:variables
 }
