@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -12,6 +13,8 @@ import javax.swing.JFrame;
  * @author miguel
  */
 public class FRMacceso extends javax.swing.JFrame {
+    String usuario= "Administardor";
+    String clave="2222";
      conectar con;
     /**
      * Creates new form FRMacceso
@@ -20,7 +23,55 @@ public class FRMacceso extends javax.swing.JFrame {
     public FRMacceso() {
         initComponents();
         con=new conectar();
+        jCnombres.requestFocus();
     }
+ void acceder(String usuario, String pass)
+    {
+        String cap="";
+       String sql="SELECT * FROM personal WHERE login='"+usuario+"' && clave='"+pass+"'";
+       
+       
+       
+       
+       
+       try {
+            Statement st = con.getConection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next())
+            {
+                cap=rs.getString("login");
+                cap=rs.getString("clave");
+            }
+            if(cap.equals("Administardor"))
+            {
+                  this.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Bienvenido");
+                     Principal ingreso = new Principal();
+                    ingreso.setVisible(true);
+                    ingreso.pack();
+//                     Principal.lblusu.setText(usuario);
+        
+                
+            }
+            if(cap.equals("usuario"))
+            {
+            this.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Bienvenido");
+                    PrincipalUsuario ingresos = new PrincipalUsuario();
+                    ingresos.setVisible(true);
+                    ingresos.pack();
+//                     PrincipalUsuario.lblconectado.setText(usuario);
+            }
+            if((!cap.equals("Administardor"))&& (!cap.equals("usuario")))
+            {
+                JOptionPane.showMessageDialog(this, "No existe sus datos");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        }
+
             classPasajeros p = new classPasajeros();
             
     /**
@@ -72,6 +123,11 @@ public class FRMacceso extends javax.swing.JFrame {
             }
         });
 
+        jCnombres.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCnombresItemStateChanged(evt);
+            }
+        });
         jCnombres.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jCnombresMouseClicked(evt);
@@ -186,7 +242,7 @@ public class FRMacceso extends javax.swing.JFrame {
     }//GEN-LAST:event_jCnombresMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
+       
     classPasajeros p = new classPasajeros();
      txtContraseña.requestFocus();
          try {
@@ -209,23 +265,31 @@ public class FRMacceso extends javax.swing.JFrame {
              char[] arrayC = txtContraseña.getPassword(); 
              String pass = new String(arrayC); 
              if (pass.equals(key)  ){
-                 jOptionPane1.showMessageDialog(null, "Bienvenid@: "+this.jCnombres.getSelectedItem() );
-                Principal t=new Principal();
+                 Principal t=new Principal();
+                 t.setVisible(true);
                 t.setExtendedState(JFrame.MAXIMIZED_BOTH);
                  t.show();
+                 jOptionPane1.showMessageDialog(null, "Bienvenid@: "+this.jCnombres.getSelectedItem() );
+                 
              }
              else{
+                 
                 jOptionPane1.showMessageDialog(null, "CLAVE ERRONEA"); 
              }
              }
          } catch (SQLException ex) {
              Logger.getLogger(FRMacceso.class.getName()).log(Level.SEVERE, null, ex);
+   
          }
+         String usu=(String)jCnombres.getSelectedItem();
+    String pas=new String(txtContraseña.getPassword());
+    acceder(usu, pas);
     }//GEN-LAST:event_jBinicioActionPerformed
 
 
     private void jCnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCnombresActionPerformed
         // TODO add your handling code here:
+        jCnombres.requestFocus();
     }//GEN-LAST:event_jCnombresActionPerformed
 
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
@@ -243,6 +307,20 @@ public class FRMacceso extends javax.swing.JFrame {
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
        
     }//GEN-LAST:event_formKeyReleased
+
+    private void jCnombresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCnombresItemStateChanged
+        // TODO add your handling code here:
+        int i;
+        i = jCnombres.getSelectedIndex();
+        switch(1) {
+            case 0: clave="2222"; usuario="Administardor"; break;
+            case 1: clave="1111"; usuario="usuario";break;
+            case 2: clave="123456"; usuario="secretaria 1";break;
+            case 3: clave="654321"; usuario="secretaria 2";break;
+                            
+                    
+        }
+    }//GEN-LAST:event_jCnombresItemStateChanged
 
 
     /**

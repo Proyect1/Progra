@@ -58,7 +58,7 @@ public class classPasajeros {
    }
       public void delete(String cod){  
             try {                
-                PreparedStatement pstm = con.getConection().prepareStatement("delete from pasajeros where codigo = ?");            
+                PreparedStatement pstm = con.getConection().prepareStatement("delete from pasajeros where rut = ?");            
                 pstm.setString(1, cod);                   
                 pstm.execute();
                 pstm.close();            
@@ -85,7 +85,7 @@ public class classPasajeros {
          PreparedStatement pstm = con.getConection().prepareStatement("SELECT " +
             " rut,codigo,nombre, apellido, apoderado, domicilio " +
             " FROM pasajeros" +
-            " ORDER BY codigo ");
+            " ORDER BY rut ");
          ResultSet res = pstm.executeQuery();
          int i = 0;
          while(res.next()){

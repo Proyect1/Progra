@@ -16,6 +16,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        FRMacceso fr=new FRMacceso();
     }
 
     /**
