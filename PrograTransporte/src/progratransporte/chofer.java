@@ -47,6 +47,7 @@ public class chofer extends javax.swing.JInternalFrame {
         txtmovil = new javax.swing.JTextField();
         txtsexo = new javax.swing.JTextField();
         actualizar = new javax.swing.JButton();
+        beliminar = new javax.swing.JButton();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -105,6 +106,13 @@ public class chofer extends javax.swing.JInternalFrame {
             }
         });
 
+        beliminar.setText("eliminar");
+        beliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,7 +135,7 @@ public class chofer extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtrut, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +147,9 @@ public class chofer extends javax.swing.JInternalFrame {
                                     .addComponent(txtsexo, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addComponent(actualizar)))))
+                                .addComponent(actualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addComponent(beliminar)))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -167,7 +177,9 @@ public class chofer extends javax.swing.JInternalFrame {
                             .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(actualizar)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(actualizar)
+                            .addComponent(beliminar))))
                 .addContainerGap(135, Short.MAX_VALUE))
         );
 
@@ -210,6 +222,16 @@ public class chofer extends javax.swing.JInternalFrame {
       }
     }//GEN-LAST:event_tablaMouseClicked
 
+    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
+        // TODO add your handling code here:
+         if (fila > -1){
+            String codigo = String.valueOf(tabla.getValueAt(fila, 0));                        
+            ch.delete(codigo);
+            updateTable();
+            fila=-1;
+        }
+    }//GEN-LAST:event_beliminarActionPerformed
+
 public void updateTable(){
      String[] columNames = {"rut","nombre","apellido","movil", "sexo"};  
         // se utiliza la funcion
@@ -229,6 +251,7 @@ classChofer ch=new classChofer();
  int fila=-1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar;
+    private javax.swing.JButton beliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

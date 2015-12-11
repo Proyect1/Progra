@@ -55,6 +55,8 @@ public class Principal extends javax.swing.JFrame {
         actuachofer = new javax.swing.JMenuItem();
         actuacolegio = new javax.swing.JMenuItem();
         actuapersonal = new javax.swing.JMenuItem();
+        actuabus = new javax.swing.JMenuItem();
+        actuapasajero = new javax.swing.JMenuItem();
         btnadministrativo1 = new javax.swing.JMenu();
         agregarchofer = new javax.swing.JMenuItem();
         agregarcolegio = new javax.swing.JMenuItem();
@@ -63,6 +65,8 @@ public class Principal extends javax.swing.JFrame {
         eliminarchofer = new javax.swing.JMenuItem();
         eliminarcolegio = new javax.swing.JMenuItem();
         eliminarpersonal = new javax.swing.JMenuItem();
+        eliminarbus = new javax.swing.JMenuItem();
+        eliminarpasajero = new javax.swing.JMenuItem();
 
         jMenuItem9.setText("jMenuItem9");
 
@@ -199,6 +203,22 @@ public class Principal extends javax.swing.JFrame {
         });
         btnadministrativo.add(actuapersonal);
 
+        actuabus.setText("bus");
+        actuabus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuabusActionPerformed(evt);
+            }
+        });
+        btnadministrativo.add(actuabus);
+
+        actuapasajero.setText("pasajero");
+        actuapasajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuapasajeroActionPerformed(evt);
+            }
+        });
+        btnadministrativo.add(actuapasajero);
+
         jMenu4.add(btnadministrativo);
 
         btnadministrativo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
@@ -234,6 +254,11 @@ public class Principal extends javax.swing.JFrame {
         btnadministrativo2.setText("Eliminar");
 
         eliminarchofer.setText("chofer");
+        eliminarchofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarchoferActionPerformed(evt);
+            }
+        });
         btnadministrativo2.add(eliminarchofer);
 
         eliminarcolegio.setText("colegio");
@@ -245,7 +270,28 @@ public class Principal extends javax.swing.JFrame {
         btnadministrativo2.add(eliminarcolegio);
 
         eliminarpersonal.setText("personal");
+        eliminarpersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarpersonalActionPerformed(evt);
+            }
+        });
         btnadministrativo2.add(eliminarpersonal);
+
+        eliminarbus.setText("bus");
+        eliminarbus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarbusActionPerformed(evt);
+            }
+        });
+        btnadministrativo2.add(eliminarbus);
+
+        eliminarpasajero.setText("pasajero");
+        eliminarpasajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarpasajeroActionPerformed(evt);
+            }
+        });
+        btnadministrativo2.add(eliminarpasajero);
 
         jMenu4.add(btnadministrativo2);
 
@@ -316,6 +362,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void eliminarcolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarcolegioActionPerformed
         // TODO add your handling code here:
+        colegio col=new colegio();
+        col.setVisible(true);
+        escritorio.add(col);
     }//GEN-LAST:event_eliminarcolegioActionPerformed
 
     private void actuacolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuacolegioActionPerformed
@@ -374,13 +423,55 @@ public class Principal extends javax.swing.JFrame {
         escritorio.add(bu);
         bu.setVisible(true);
     }//GEN-LAST:event_verbusActionPerformed
- String rut ;
- String nombre;
- String apellido;
- String movil;
- String sexo;
- String direccion;
- int clave;
+
+    private void eliminarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarchoferActionPerformed
+        // TODO add your handling code here:
+        chofer ch=new chofer();
+        ch.setVisible(true);
+        escritorio.add(ch);
+    }//GEN-LAST:event_eliminarchoferActionPerformed
+
+    private void eliminarpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarpersonalActionPerformed
+        // TODO add your handling code here:
+        personal per=new personal();
+        per.setVisible(true);
+        escritorio.add(per);
+    }//GEN-LAST:event_eliminarpersonalActionPerformed
+
+    private void eliminarbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarbusActionPerformed
+        // TODO add your handling code here:
+        bus b=new bus();
+        b.setVisible(true);
+        escritorio.add(b);
+    }//GEN-LAST:event_eliminarbusActionPerformed
+
+    private void eliminarpasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarpasajeroActionPerformed
+        // TODO add your handling code here:
+        pasajero pa=new pasajero();
+        pa.setVisible(true);
+        escritorio.add(pa);
+    }//GEN-LAST:event_eliminarpasajeroActionPerformed
+
+    private void actuabusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuabusActionPerformed
+        // TODO add your handling code here:
+        bus b=new bus();
+        b.setVisible(true);
+        escritorio.add(b);
+    }//GEN-LAST:event_actuabusActionPerformed
+
+    private void actuapasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuapasajeroActionPerformed
+        // TODO add your handling code here:
+        pasajero pa=new pasajero();
+        pa.setVisible(true);
+        escritorio.add(pa);
+    }//GEN-LAST:event_actuapasajeroActionPerformed
+// String rut ;
+// String nombre;
+// String apellido;
+// String movil;
+// String sexo;
+// String direccion;
+// int clave;
     /**
      * @param args the command line arguments
      */
@@ -417,8 +508,10 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem actuabus;
     private javax.swing.JMenuItem actuachofer;
     private javax.swing.JMenuItem actuacolegio;
+    private javax.swing.JMenuItem actuapasajero;
     private javax.swing.JMenuItem actuapersonal;
     private javax.swing.JMenuItem agregarchofer;
     private javax.swing.JMenuItem agregarcolegio;
@@ -426,8 +519,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu btnadministrativo;
     private javax.swing.JMenu btnadministrativo1;
     private javax.swing.JMenu btnadministrativo2;
+    private javax.swing.JMenuItem eliminarbus;
     private javax.swing.JMenuItem eliminarchofer;
     private javax.swing.JMenuItem eliminarcolegio;
+    private javax.swing.JMenuItem eliminarpasajero;
     private javax.swing.JMenuItem eliminarpersonal;
     private javax.swing.JPanel escritorio;
     private javax.swing.JMenuItem formulariotars;

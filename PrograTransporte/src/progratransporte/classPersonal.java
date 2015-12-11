@@ -54,7 +54,7 @@ public class classPersonal {
    }
       public void delete(String cod){  
             try {                
-                PreparedStatement pstm = con.getConection().prepareStatement("delete from pasajeros where clave = ?");            
+                PreparedStatement pstm = con.getConection().prepareStatement("delete from pasajeros where login = ?");            
                 pstm.setString(1, cod);                   
                 pstm.execute();
                 pstm.close();            

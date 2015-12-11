@@ -41,6 +41,7 @@ public class colegio extends javax.swing.JInternalFrame {
         actualixar = new javax.swing.JButton();
         txtnombre = new javax.swing.JTextField();
         txtdireccion = new javax.swing.JTextField();
+        beliminar = new javax.swing.JButton();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -90,6 +91,13 @@ public class colegio extends javax.swing.JInternalFrame {
             }
         });
 
+        beliminar.setText("eliminar");
+        beliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,6 +118,8 @@ public class colegio extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(165, 165, 165)
                 .addComponent(actualixar)
+                .addGap(39, 39, 39)
+                .addComponent(beliminar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,8 +134,10 @@ public class colegio extends javax.swing.JInternalFrame {
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(actualixar)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(actualixar)
+                    .addComponent(beliminar))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,6 +173,16 @@ public class colegio extends javax.swing.JInternalFrame {
         txtdireccion.setText(String.valueOf(tabla.getValueAt(fila, 2)));
       }
     }//GEN-LAST:event_tablaMouseClicked
+
+    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
+        // TODO add your handling code here:
+        if (fila > -1){
+            String codigo = String.valueOf(tabla.getValueAt(fila, 0));
+            col.delete(codigo);
+            updateTable();
+            fila=-1;
+        }
+    }//GEN-LAST:event_beliminarActionPerformed
  public void updateTable(){
      
  
@@ -182,6 +204,7 @@ classColegio col=new classColegio();
 Object[][] dtPer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualixar;
+    private javax.swing.JButton beliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

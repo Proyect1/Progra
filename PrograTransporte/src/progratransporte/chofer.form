@@ -50,7 +50,7 @@
                               <Component id="txtrut" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -63,9 +63,11 @@
                                   <Component id="txtsexo" pref="147" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                               <Component id="actualizar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="41" max="32767" attributes="0"/>
+                              <Component id="beliminar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -103,7 +105,10 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Component id="actualizar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="actualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="beliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="135" max="32767" attributes="0"/>
@@ -177,6 +182,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="beliminar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="eliminar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beliminarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
