@@ -43,8 +43,6 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         agregachofer = new javax.swing.JMenuItem();
         agregacolegio = new javax.swing.JMenuItem();
         agregapersonal = new javax.swing.JMenuItem();
-        agregamensualidad = new javax.swing.JMenuItem();
-        agregapasajero = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -60,11 +58,13 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         );
         escritoLayout.setVerticalGroup(
             escritoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 281, Short.MAX_VALUE)
+            .addGap(0, 268, Short.MAX_VALUE)
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/draw_dodge_burn.png"))); // NOI18N
         jMenu1.setText("Buscar");
 
+        buscarchofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_green.png"))); // NOI18N
         buscarchofer.setText("chofer");
         buscarchofer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +73,7 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu1.add(buscarchofer);
 
+        buscarcolegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reseller_account.png"))); // NOI18N
         buscarcolegio.setText("colegio");
         buscarcolegio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +82,7 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu1.add(buscarcolegio);
 
+        buscarpersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_silhouette.png"))); // NOI18N
         buscarpersonal.setText("personal");
         buscarpersonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +91,7 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu1.add(buscarpersonal);
 
+        buscarbus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/metro.png"))); // NOI18N
         buscarbus.setText("bus");
         buscarbus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +100,7 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu1.add(buscarbus);
 
+        buscarpasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_red.png"))); // NOI18N
         buscarpasajero.setText("pasajero");
         buscarpasajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,8 +111,10 @@ public class PrincipalUsuario extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table_multiple.png"))); // NOI18N
         jMenu2.setText("mensualidad y traslado");
 
+        tablamensualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table.png"))); // NOI18N
         tablamensualidad.setText("tablamensualidad");
         tablamensualidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,13 +123,21 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu2.add(tablamensualidad);
 
+        formulariotraslado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/font_red.png"))); // NOI18N
         formulariotraslado.setText("formulariotraslado");
+        formulariotraslado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                formulariotrasladoActionPerformed(evt);
+            }
+        });
         jMenu2.add(formulariotraslado);
 
         jMenuBar1.add(jMenu2);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_add.png"))); // NOI18N
         jMenu5.setText("Agregar");
 
+        agregachofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         agregachofer.setText("chofer");
         agregachofer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,17 +146,23 @@ public class PrincipalUsuario extends javax.swing.JFrame {
         });
         jMenu5.add(agregachofer);
 
+        agregacolegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         agregacolegio.setText("colegio");
+        agregacolegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregacolegioActionPerformed(evt);
+            }
+        });
         jMenu5.add(agregacolegio);
 
+        agregapersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         agregapersonal.setText("personal");
+        agregapersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregapersonalActionPerformed(evt);
+            }
+        });
         jMenu5.add(agregapersonal);
-
-        agregamensualidad.setText("bus");
-        jMenu5.add(agregamensualidad);
-
-        agregapasajero.setText("pasajero");
-        jMenu5.add(agregapasajero);
 
         jMenuBar1.add(jMenu5);
 
@@ -173,6 +193,9 @@ public class PrincipalUsuario extends javax.swing.JFrame {
 
     private void agregachoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregachoferActionPerformed
         // TODO add your handling code here:
+        Agregarchofer cho=new Agregarchofer();
+        escrito.add(cho);
+        cho.setVisible(true);
     }//GEN-LAST:event_agregachoferActionPerformed
 
     private void buscarcolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcolegioActionPerformed
@@ -205,7 +228,31 @@ public class PrincipalUsuario extends javax.swing.JFrame {
 
     private void tablamensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablamensualidadActionPerformed
         // TODO add your handling code here:
+        Tablamensualidad ta = new Tablamensualidad ();
+        ta.setVisible(true);
+        escrito.add(ta);
     }//GEN-LAST:event_tablamensualidadActionPerformed
+
+    private void formulariotrasladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formulariotrasladoActionPerformed
+        // TODO add your handling code here:
+        formularioTraslado fr= new   formularioTraslado();
+        fr.setVisible(true);
+        escrito.add(fr);
+    }//GEN-LAST:event_formulariotrasladoActionPerformed
+
+    private void agregacolegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregacolegioActionPerformed
+        // TODO add your handling code here:
+        Agregarcolegio cho=new Agregarcolegio();
+        escrito.add(cho);
+        cho.setVisible(true);
+    }//GEN-LAST:event_agregacolegioActionPerformed
+
+    private void agregapersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregapersonalActionPerformed
+        // TODO add your handling code here:
+        Agregarpersonal cho=new Agregarpersonal();
+        escrito.add(cho);
+        cho.setVisible(true);
+    }//GEN-LAST:event_agregapersonalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,8 +292,6 @@ public class PrincipalUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem agregachofer;
     private javax.swing.JMenuItem agregacolegio;
-    private javax.swing.JMenuItem agregamensualidad;
-    private javax.swing.JMenuItem agregapasajero;
     private javax.swing.JMenuItem agregapersonal;
     private javax.swing.JMenuItem buscarbus;
     private javax.swing.JMenuItem buscarchofer;

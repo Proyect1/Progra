@@ -11,11 +11,17 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/draw_dodge_burn.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="buscarchofer">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/user_green.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="chofer"/>
               </Properties>
               <Events>
@@ -24,6 +30,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarcolegio">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/reseller_account.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="colegio"/>
               </Properties>
               <Events>
@@ -32,6 +41,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarpersonal">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/user_silhouette.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="personal"/>
               </Properties>
               <Events>
@@ -40,6 +52,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarbus">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/metro.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="bus"/>
               </Properties>
               <Events>
@@ -48,6 +63,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarpasajero">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/user_red.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="pasajero"/>
               </Properties>
               <Events>
@@ -58,11 +76,17 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/table_multiple.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="mensualidad y traslado"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="tablamensualidad">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/table.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="tablamensualidad"/>
               </Properties>
               <Events>
@@ -71,18 +95,30 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="formulariotraslado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/font_red.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="formulariotraslado"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="formulariotrasladoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/user_add.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="agregachofer">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/add.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="chofer"/>
               </Properties>
               <Events>
@@ -91,23 +127,25 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="agregacolegio">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/add.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="colegio"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregacolegioActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="agregapersonal">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/add.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="personal"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="agregamensualidad">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="bus"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="agregapasajero">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="pasajero"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregapersonalActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -162,7 +200,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="281" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

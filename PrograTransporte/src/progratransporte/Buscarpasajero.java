@@ -84,6 +84,7 @@ DefaultTableModel mod=new DefaultTableModel();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -100,7 +101,7 @@ DefaultTableModel mod=new DefaultTableModel();
             }
         });
 
-        jLabel1.setText("Buscar");
+        jLabel1.setText("Buscar rut");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,8 +129,8 @@ DefaultTableModel mod=new DefaultTableModel();
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtconsul, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
                 .addComponent(jButton1)
@@ -149,7 +150,7 @@ DefaultTableModel mod=new DefaultTableModel();
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,6 +164,11 @@ DefaultTableModel mod=new DefaultTableModel();
         // TODO add your handling code here:
         mostrar("");
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+         this.setTitle(" pasajero");
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
 

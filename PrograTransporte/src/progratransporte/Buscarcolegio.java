@@ -75,6 +75,7 @@ public class Buscarcolegio extends javax.swing.JInternalFrame {
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -91,7 +92,7 @@ public class Buscarcolegio extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Buscar");
+        jLabel1.setText("Buscar   nombre");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,10 +120,10 @@ public class Buscarcolegio extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtconsul, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(jButton1)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -140,7 +141,7 @@ public class Buscarcolegio extends javax.swing.JInternalFrame {
                     .addComponent(jButton1))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,6 +156,11 @@ public class Buscarcolegio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         mostrar("");
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+         this.setTitle(" colegio");
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

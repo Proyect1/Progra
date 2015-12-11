@@ -81,6 +81,7 @@ void mostrar(String co ) {
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -97,7 +98,7 @@ void mostrar(String co ) {
             }
         });
 
-        jLabel1.setText("Buscar");
+        jLabel1.setText("Buscar  rut");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +161,11 @@ void mostrar(String co ) {
         // TODO add your handling code here:
         mostrar("");
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+         this.setTitle(" chofer");
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

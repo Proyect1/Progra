@@ -83,6 +83,7 @@ void mostrar(String co ) {
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -99,7 +100,7 @@ void mostrar(String co ) {
             }
         });
 
-        jLabel1.setText("Buscar");
+        jLabel1.setText("Buscar patente");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -127,10 +128,10 @@ void mostrar(String co ) {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(txtconsul, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(jButton1)
                 .addGap(71, 71, 71))
             .addGroup(layout.createSequentialGroup()
@@ -148,7 +149,7 @@ void mostrar(String co ) {
                     .addComponent(jButton1))
                 .addGap(59, 59, 59)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,6 +163,11 @@ void mostrar(String co ) {
         // TODO add your handling code here:
         mostrar("");
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+        this.setTitle(" bus");
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

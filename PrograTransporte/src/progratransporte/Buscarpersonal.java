@@ -80,6 +80,7 @@ public class Buscarpersonal extends javax.swing.JInternalFrame {
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -96,7 +97,7 @@ public class Buscarpersonal extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Buscar");
+        jLabel1.setText("Buscar  login");
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +125,7 @@ public class Buscarpersonal extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtconsul, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -145,7 +146,7 @@ public class Buscarpersonal extends javax.swing.JInternalFrame {
                     .addComponent(jButton1))
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,6 +160,11 @@ public class Buscarpersonal extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         mostrar("");
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+         this.setTitle(" personal");
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
